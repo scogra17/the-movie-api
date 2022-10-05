@@ -1,7 +1,7 @@
 CREATE TABLE movies (
   id serial PRIMARY KEY,
   title text NOT NULL UNIQUE,
-  release_date text,
+  release_date TIMESTAMP,
   budget INT,
   revenue INT,
   vote_average INT,
