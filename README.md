@@ -1,0 +1,2 @@
+# About
+API for accessing the [2017 MovieLens dataset ](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset). More recent datasets are available [here](https://grouplens.org/datasets/movielens/).

@@ -1,0 +1,19 @@
+{
+  "name": "the-movies-api",
+  "version": "1.0.0",
+  "description": "API for accessing movie data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scogra17/the-movie-api.git"
+  },
+  "author": "Scott Graham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scogra17/the-movie-api/issues"
+  },
+  "homepage": "https://github.com/scogra17/the-movie-api#readme"
+}
