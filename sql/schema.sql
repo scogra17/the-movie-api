@@ -1,6 +1,11 @@
 CREATE TABLE movies (
   id serial PRIMARY KEY,
-  title text NOT NULL UNIQUE
+  title text NOT NULL UNIQUE,
+  release_date text,
+  budget INT,
+  revenue INT,
+  vote_average INT,
+  vote_count INT 
 );
 
 CREATE TABLE movies_genres (
@@ -9,7 +14,7 @@ CREATE TABLE movies_genres (
     NOT NULL
     REFERENCES movies (id)
     ON DELETE CASCADE,
-  genre TEXT NOT NULL
+  name TEXT NOT NULL
 );
 
 CREATE TABLE movies_production_companies (
@@ -18,5 +23,5 @@ CREATE TABLE movies_production_companies (
     NOT NULL
     REFERENCES movies (id)
     ON DELETE CASCADE,
-  production_company TEXT NOT NULL
+  name TEXT NOT NULL
 );
