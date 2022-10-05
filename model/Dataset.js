@@ -34,7 +34,7 @@ class Dataset {
             queries.insertMovieGenre({movieId, genre: genre.name})
           });
           productionCompanies.forEach(company => {
-            queries.insertMovieProductionCompany({movieId, productionCompany: company.name})
+            queries.insertMovieProductionCompany({movieId, productionCompany: company.name, productionCompanyId: company.id })
           });
         } catch (err) {
           console.log('Error: ', err);

@@ -23,5 +23,6 @@ CREATE TABLE movies_production_companies (
     NOT NULL
     REFERENCES movies (id)
     ON DELETE CASCADE,
-  name TEXT NOT NULL
+  name TEXT NOT NULL,
+  production_company_id INT
 );
