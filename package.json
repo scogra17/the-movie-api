@@ -2,10 +2,13 @@
   "name": "the-movies-api",
   "version": "1.0.0",
   "description": "API for accessing movie data",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "dbMigrate": "node lib/db/scripts/scaffold.js",
+    "dbSeed": "node lib/db/scripts/seed.js",
+    "dbTeardown": "node lib/db/scripts/teardown.js"
   },
   "repository": {
     "type": "git",
