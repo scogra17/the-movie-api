@@ -115,7 +115,8 @@ environment variables (see 'Environment variables' above)
 * Get the most popular genre in 1997: `curl localhost:3001/api/genres?year=1997`
 * Get the financials for production companies by year: `curl localhost:3001/api/production-companies/financials`
 * Get the financials for production companies in 1992: `curl localhost:3001/api/production-companies/financials?year=1992`
-* Get the financials for production companies in 1992: `curl localhost:3001/api/production-companies/financials?year=1992`
+* Get the financials for Disney by year: `curl localhost:3001/api/production-companies/financials?production-company-id=2`
+* Get the financials for Disney in 1992: `curl 'localhost:3001/api/production-companies/financials?production-company-id=2&year=1992'`
 
 # Testing 
 
