@@ -146,6 +146,7 @@ environment variables (see ["Envrionment variables"](#envrionment-variables) abo
 * Get the financials for Disney in 1992: `curl 'localhost:3001/api/production-companies/financials?production-company-id=2&year=1992'`
 
 # Testing 
+Given more time, I would like to write unit tests for `getMostPopularGenre` and `getProductionCompanyFinancials` running against a test database.
 
 # Data model
 All of the data needed to meet the requirements was contained within a single file, `movies_metadata.csv`. 
