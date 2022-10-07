@@ -68,6 +68,7 @@ The query parameter `year` is optional.
 * create an .env file at the project root: `$ touch .env` and add the necessary environment variables (see 'Environment variables' below)
 * build the images (server and db) and start the containers: `$ docker-compose up`
 * create the db tables: `$ docker exec the-movies-api-server-1 npm run dbMigrate`
+* download the movies data: `$ docker exec the-movies-api-server-1 npm run dbDataDownload`
 * seed the db tables: `$ docker exec the-movies-api-server-1 npm run dbSeed`
 
 ## Installing Docker
@@ -106,6 +107,7 @@ environment variables (see 'Environment variables' above)
 * navigate to the project root: `$ cd /the-movies-api`
 * update values in the `.env` file as necessary (e.g. update `DB_HOST` from 'db' to 'localhost')
 * create the db tables: `$ npm run dbMigrate`
+* download the movies data: `$ npm run dbDataDownload`
 * seed the db tables: `$ npm run dbSeed`
 
 ## cURL examples

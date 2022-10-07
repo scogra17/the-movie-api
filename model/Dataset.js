@@ -2,15 +2,41 @@ const fs = require("fs");
 const { parse } = require("csv-parse");
 const queries = require("../lib/db/queries/index");
 const { strToArr } = require("../utils/helpers");
+const AdmZip = require("adm-zip");
+const path = require("path");
+const request = require('superagent');
 
 class Dataset {
   constructor(dataUrl = 'https://s3-us-west-2.amazonaws.com/com.guild.us-west-2.public-data/project-data/the-movies-dataset.zip') {
     this.dataUrl = dataUrl;
+    this.extractFileName();
+    this.outputDir = 'data/'
+  }
+
+  extractFileName() {
+    this.zipFileName = this.dataUrl.split('/').slice(-1)[0];
+  }
+
+  downloadData() {
+    const that = this;
+    request
+      .get(this.dataUrl)
+      .on('error', function(error) {
+        console.log(error);
+      })
+      .pipe(fs.createWriteStream(this.zipFileName))
+      .on('finish', function() {
+        console.log('finished downloading');
+        var zip = new AdmZip(that.zipFileName);
+        console.log(`start unzip and extract to ${that.outputDir}`);
+        zip.extractAllTo(that.outputDir);
+        console.log('finished unzip');
+    });
   }
 
   extractData({ rowsToProcess }) {
     console.log('extracting data!');
-    fs.createReadStream("./data/the-movies-dataset/movies_metadata.csv")
+    fs.createReadStream("./data/movies_metadata.csv")
       .pipe(parse({ delimiter: ",", from_line: 2, to_line: rowsToProcess }))
       .on("data", async function (row) {
         try {
