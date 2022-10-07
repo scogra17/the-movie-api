@@ -35,7 +35,7 @@ More recent MovieLens datasets are available [here](https://grouplens.org/datase
 
 # API
 
-## GET /api/production_companies/financials[?year=YEAR&production-company-id=PRODUCTION-COMPANY-ID]
+## GET /api/production-companies/financials[?year=YEAR&production-company-id=PRODUCTION-COMPANY-ID]
 Get production company budget and revenue by year. 
 
 The query parameters `year` and `production-company-id` are optional.
@@ -146,7 +146,6 @@ environment variables (see ["Envrionment variables"](#envrionment-variables) abo
 * Get the financials for Disney in 1992: `curl 'localhost:3001/api/production-companies/financials?production-company-id=2&year=1992'`
 
 # Testing 
-Given more time, I would like to write unit tests for `getMostPopularGenre` and `getProductionCompanyFinancials` running against a test database.
 
 # Data model
 All of the data needed to meet the requirements was contained within a single file, `movies_metadata.csv`. 
@@ -162,7 +161,7 @@ There are a number of interpretations of the "most popular" genre by year. It co
 * The highest weighted average audience score
 * The highest count of movies released
 
-And perhaps other interpretations. For the sake of the `GET /genre` endpoint, I decided to use the first interpretations above: the highest cumulative revenue. 
+And perhaps other interpretations. For the sake of the `GET /genre` endpoint, I decided to use the first interpretations above: the highest cumulative revenue. I have also assumed that the same currency is used for all revenue amounts. 
 
 ## Requirement: query parmeters 
 The requirements specify query params that need to be supported for each endpoint. The requirements don't, however, specify whether these params are required or optional. I decided to make the API more flexible by making the query params optional.
